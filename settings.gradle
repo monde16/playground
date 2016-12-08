@@ -2,4 +2,7 @@ rootProject.name = 'playground'
 include 'threads'
 include 'javaMail'
 include 'camel'
+include 'reflect'
+include 'guice'
+include 'jfxBeans'
 
