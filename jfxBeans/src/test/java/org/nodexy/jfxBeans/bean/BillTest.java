@@ -18,6 +18,12 @@ public class BillTest {
         assertEquals(0,bill.getAmountDue(),0);
         bill.setAmountDue(127.50);
         assertEquals(127.5,bill.getAmountDue(),0);
+        System.out.println("*******************************");
+        System.out.println("bill = "+bill);
+        System.out.println("bill.amountProp = "+bill.amountDueProperty());
+        System.out.println("amountProp.getBean = "+bill.amountDueProperty().getBean());
+        System.out.println("amountProp.name = "+bill.amountDueProperty().getName());
+        System.out.println("*******************************");
     }
     @Test public void testListener() {
         Bill bill = new Bill();

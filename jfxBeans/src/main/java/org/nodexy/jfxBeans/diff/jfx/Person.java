@@ -1,9 +1,8 @@
 package org.nodexy.jfxBeans.diff.jfx;
 
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
+
+import java.time.LocalDateTime;
 
 /**
  * Created by phoenix on 07/12/16.
@@ -12,11 +11,23 @@ public class Person {
     private StringProperty firstName;
     private StringProperty lastName;
     private BooleanProperty alive;
+    private ObjectProperty<LocalDateTime> dob;
 
     public Person() {
         firstName = new SimpleStringProperty("");
         lastName = new SimpleStringProperty("");
         alive = new SimpleBooleanProperty(false);
+        dob = new ObjectPropertyBase<LocalDateTime>() {
+            @Override
+            public Object getBean() {
+                return null;
+            }
+
+            @Override
+            public String getName() {
+                return null;
+            }
+        };
     }
 
     public final String getFirstName() {
@@ -55,12 +66,20 @@ public class Person {
         this.alive.set(alive);
     }
 
+    public LocalDateTime getDob() {
+        return dob.get();
+    }
+    public void setDob(LocalDateTime value) {
+        dob.set(value);
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "firstName=" + firstName +
                 ", lastName=" + lastName +
                 ", alive=" + alive +
+                ", dob=" + dob +
                 '}';
     }
 }
