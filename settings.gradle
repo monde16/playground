@@ -11,4 +11,5 @@ include 'generics'
 include 'kt-play'
 include 'vaadinDemo'
 include 'CommonsConfig'
+include 'freemarker'
 
