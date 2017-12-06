@@ -29,9 +29,8 @@ fun isLeapYear(year: Int): Boolean {
 }
 
 fun f() {
-    (1900..2020)
-            .filter { isLeapYear(it) }
-            .forEach { println("\t$it") }
+    val years = (1900..2020).filter { isLeapYear(it) }
+    println(years.joinToString(", ", "[", "]"))
 }
 
 fun main(args: Array<String>) {

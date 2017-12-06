@@ -13,4 +13,6 @@ include 'vaadinDemo'
 include 'CommonsConfig'
 include 'freemarker'
 include 'spark'
+include 'java-http-requests'
+include 'unit-tests'
 
