@@ -1,10 +1,7 @@
 package org.nodexy.guice.provider
 
 import com.google.inject.Provider
-import org.nodexy.guice.discount.Discountable
-import org.nodexy.guice.discount.EarlyBirdDiscount
-import org.nodexy.guice.discount.NightOwlDiscount
-import org.nodexy.guice.discount.ZeroDiscount
+import org.nodexy.guice.discount.*
 
 import java.time.LocalTime
 
