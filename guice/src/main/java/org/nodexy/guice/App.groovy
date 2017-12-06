@@ -2,23 +2,23 @@ package org.nodexy.guice
 
 import com.google.inject.Guice
 import com.google.inject.Injector
+import org.nodexy.guice.modules.DiscountModule
+
+import java.util.logging.Logger
 
 class App {
+    private static Logger log = Logger.getLogger(App.canonicalName)
     static Injector injector
     static {
-        injector = Guice.createInjector(new MyModule())
+        injector = Guice.createInjector(new DiscountModule())
     }
 
     static void main(String[] args) {
         CheckoutService checkoutService = injector.getInstance(CheckoutService.class)
 
-        def items = [
-                200d,
-                300d,
-                500d
-        ]
+        def item = 100d
 
-        println("Checking out...")
-        checkoutService.checkout(items)
+        log.info("Checking out...")
+        checkoutService.checkout(item)
     }
 }

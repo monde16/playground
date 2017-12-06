@@ -1,4 +1,4 @@
-package org.nodexy.guice
+package org.nodexy.guice.discount
 
 class EarlyBirdDiscount implements Discountable {
     @Override
