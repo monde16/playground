@@ -1,20 +1,22 @@
 package org.nodexy.guice
 
 import com.google.inject.Inject
+import com.google.inject.Provider
 import org.nodexy.guice.discount.Discountable
 
 import java.util.logging.Logger
 
 class CheckoutService {
     private static Logger log = Logger.getLogger(CheckoutService.canonicalName)
-    private Discountable discountable
+    private Provider<Discountable> provider // allows for late instantiation
 
     @Inject
-    CheckoutService(Discountable discountable) {
-        this.discountable = discountable
+    CheckoutService(Provider<Discountable> provider) {
+        this.provider = provider
     }
 
     double checkout(double... items) {
+        def discountable = provider.get()
         def total = 0d
 
         items.each {itm -> total += itm}

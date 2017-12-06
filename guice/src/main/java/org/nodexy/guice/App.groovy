@@ -2,7 +2,7 @@ package org.nodexy.guice
 
 import com.google.inject.Guice
 import com.google.inject.Injector
-import org.nodexy.guice.modules.DiscountModule
+import org.nodexy.guice.module.DiscountModule
 
 import java.util.logging.Logger
 
