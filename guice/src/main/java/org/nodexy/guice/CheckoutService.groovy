@@ -1,17 +1,16 @@
 package org.nodexy.guice
 
 import com.google.inject.Inject
-import com.google.inject.Provider
-import org.nodexy.guice.discount.Discountable
+import org.nodexy.guice.provider.DiscountProvider
 
 import java.util.logging.Logger
 
 class CheckoutService {
     private static Logger log = Logger.getLogger(CheckoutService.canonicalName)
-    private Provider<Discountable> provider // allows for late instantiation
+    private DiscountProvider provider // allows for late instantiation
 
     @Inject
-    CheckoutService(Provider<Discountable> provider) {
+    CheckoutService(DiscountProvider provider) {
         this.provider = provider
     }
 
